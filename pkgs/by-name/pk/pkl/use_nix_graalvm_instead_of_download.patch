@@ -1,0 +1,13 @@
+diff --git a/buildSrc/src/main/kotlin/BuildInfo.kt b/buildSrc/src/main/kotlin/BuildInfo.kt
+index 4adb0f7f..34f86aac 100644
+--- a/buildSrc/src/main/kotlin/BuildInfo.kt
++++ b/buildSrc/src/main/kotlin/BuildInfo.kt
+@@ -97,7 +97,7 @@ open class BuildInfo(private val project: Project) {
+       File(homeDir, "${baseName}.$extension")
+     }
+
+-    val installDir: File by lazy { File(homeDir, baseName) }
++    val installDir: File by lazy { File("@graalvmDir@") }
+
+     val baseDir: String by lazy {
+       if (os.isMacOsX) "$installDir/Contents/Home" else installDir.toString()
